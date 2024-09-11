@@ -2,3 +2,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "./stylings/theme";
 @import "./stylings/fonts";
+
+html,
+body {
+  height: 100%;
+}
