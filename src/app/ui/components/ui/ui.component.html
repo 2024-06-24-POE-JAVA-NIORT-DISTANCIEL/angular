@@ -1,7 +1,13 @@
 <header class="fixed-top">
   <span (click)="toggle()">
-    <ng-content *ngIf="open" select=".tr-close"></ng-content>
-    <ng-content *ngIf="!open" select=".tr-open"></ng-content>
+    <!-- <ng-content *ngIf="open" select=".tr-close"></ng-content>
+    <ng-content *ngIf="!open" select=".tr-open"></ng-content> -->
+
+    <ng-content *ngIf="open" ; elseBlock select=".tr-close"></ng-content>
+    <ng-template #elseBlock>
+      <ng-content select=".tr-open"></ng-content>
+    </ng-template>
+   
   </span>
   <ng-content select=".tr-header"></ng-content>
 </header>
