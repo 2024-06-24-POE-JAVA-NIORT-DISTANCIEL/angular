@@ -3,11 +3,15 @@
     <!-- <ng-content *ngIf="open" select=".tr-close"></ng-content>
     <ng-content *ngIf="!open" select=".tr-open"></ng-content> -->
 
-    <ng-content *ngIf="open" ; elseBlock select=".tr-close"></ng-content>
+    <!-- <ng-content *ngIf="open" ; elseBlock select=".tr-close"></ng-content>
     <ng-template #elseBlock>
       <ng-content select=".tr-open"></ng-content>
-    </ng-template>
-   
+    </ng-template> -->
+    @if(open){
+    <ng-content select=".tr-close"></ng-content>
+    }@else{
+    <ng-content select=".tr-open"></ng-content>
+    }
   </span>
   <ng-content select=".tr-header"></ng-content>
 </header>
