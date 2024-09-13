@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +30,32 @@ export class AppComponent {
 
   // 2. Hot and multicast
   // 2.1. Subject
-  sub$ = new Subject();
+  // sub$ = new Subject();
+
+  // constructor() {
+  //   this.sub$.subscribe((data) => {
+  //     console.log('Abonné 1 : ', data);
+  //   });
+
+  //   this.sub$.subscribe((data) => {
+  //     console.log('Abonné 2 : ', data);
+  //   });
+
+  //   console.log('Première diffusion\n================');
+  //   this.sub$.next(Math.random());
+
+  //   this.sub$.subscribe((data) => {
+  //     console.log('Abonné 3 : ', data);
+  //   });
+
+  //   console.log('Deuxième diffusion\n================');
+  //   this.sub$.next(Math.random());
+  // }
+
+  // 2.2. BehaviorSubject
+
+  // sub$ = new BehaviorSubject<number>(1);
+  sub$ = new BehaviorSubject(Math.random());
 
   constructor() {
     this.sub$.subscribe((data) => {
@@ -51,6 +76,4 @@ export class AppComponent {
     console.log('Deuxième diffusion\n================');
     this.sub$.next(Math.random());
   }
-
-  // 2.2. BahviorSubject
 }
