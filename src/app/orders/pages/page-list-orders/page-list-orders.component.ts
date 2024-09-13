@@ -7,9 +7,19 @@ import { OrdersService } from '../../services/orders.service';
   styleUrl: './page-list-orders.component.scss',
 })
 export class PageListOrdersComponent {
+  title: string = 'Orders list';
   constructor(private ordersService: OrdersService) {
     this.ordersService.collection.subscribe((orders) => {
-      // console.log("Orders : ",orders)
+      // console.log('Orders : ', orders);
     });
+  }
+
+  ngOnInit() {
+    console.log('Voici ngOnInit...');
+  }
+
+  ngOnDestroy() {
+    console.log('Bye bye');
+    // alert('Si vous quittez cette, vous allez perdre tous vos changements....');
   }
 }

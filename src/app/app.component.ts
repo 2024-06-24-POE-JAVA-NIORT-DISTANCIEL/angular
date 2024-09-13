@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -55,25 +54,25 @@ export class AppComponent {
   // 2.2. BehaviorSubject
 
   // sub$ = new BehaviorSubject<number>(1);
-  sub$ = new BehaviorSubject(Math.random());
+  // sub$ = new BehaviorSubject(Math.random());
 
-  constructor() {
-    this.sub$.subscribe((data) => {
-      console.log('Abonné 1 : ', data);
-    });
+  // constructor() {
+  //   this.sub$.subscribe((data) => {
+  //     console.log('Abonné 1 : ', data);
+  //   });
 
-    this.sub$.subscribe((data) => {
-      console.log('Abonné 2 : ', data);
-    });
+  //   this.sub$.subscribe((data) => {
+  //     console.log('Abonné 2 : ', data);
+  //   });
 
-    console.log('Première diffusion\n================');
-    this.sub$.next(Math.random());
+  //   console.log('Première diffusion\n================');
+  //   this.sub$.next(Math.random());
 
-    this.sub$.subscribe((data) => {
-      console.log('Abonné 3 : ', data);
-    });
+  //   this.sub$.subscribe((data) => {
+  //     console.log('Abonné 3 : ', data);
+  //   });
 
-    console.log('Deuxième diffusion\n================');
-    this.sub$.next(Math.random());
-  }
+  //   console.log('Deuxième diffusion\n================');
+  //   this.sub$.next(Math.random());
+  // }
 }
