@@ -8,8 +8,8 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrdersComponent {
   constructor(private ordersService: OrdersService) {
-    this.ordersService.collection.subscribe((orders)=>{
-      console.log("Orders : ",orders)
-    })
+    this.ordersService.collection.subscribe((orders) => {
+      // console.log("Orders : ",orders)
+    });
   }
 }
