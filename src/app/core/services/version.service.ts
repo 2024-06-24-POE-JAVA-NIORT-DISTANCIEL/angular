@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class VersionService {
-  numVersion = 1;
+  // Un BehaviorSubject
+  numVersion$ = new BehaviorSubject<number>(1);
   constructor() {}
 
   incrementVersion() {
-    this.numVersion++;
-    console.log('Version service : ', this.numVersion);
+    this.numVersion$.next(this.numVersion$.value + 1);
+    console.log('Version service : ', this.numVersion$.value);
   }
 }
