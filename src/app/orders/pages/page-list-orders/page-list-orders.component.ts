@@ -9,6 +9,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrdersComponent {
   title: string = 'Orders list';
+  counter: number = 0;
   headers: string[] = [
     'Type',
     'Client',
@@ -33,5 +34,15 @@ export class PageListOrdersComponent {
   ngOnDestroy() {
     console.log('Bye bye');
     // alert('Si vous quittez cette, vous allez perdre tous vos changements....');
+  }
+
+  total(val: number, coef: number, tva?: number): number {
+    this.counter++;
+    if (tva) {
+      console.log(this.counter, ': total avec TVA');
+      return val * coef * (1 + tva / 100);
+    }
+    console.log(this.counter, ' : total sans TVA');
+    return val * coef;
   }
 }
