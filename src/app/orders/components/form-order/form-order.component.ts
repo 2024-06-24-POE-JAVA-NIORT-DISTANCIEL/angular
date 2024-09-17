@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { StatusOrder } from '../../../core/enums/status-order.enum';
 import { Order } from '../../../core/models/order';
@@ -11,6 +11,7 @@ import { Order } from '../../../core/models/order';
 export class FormOrderComponent {
   status = Object.values(StatusOrder);
   @Input() init!: Order;
+  @Output() submitted = new EventEmitter<Order>();
   form!: FormGroup;
 
   // form2 = new FormGroup({
@@ -31,5 +32,9 @@ export class FormOrderComponent {
       typePresta: [this.init.typePresta],
       id: [this.init.id],
     });
+  }
+
+  submit() {
+    this.submitted.emit(this.form.value);
   }
 }
