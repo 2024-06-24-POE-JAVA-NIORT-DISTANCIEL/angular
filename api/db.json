@@ -15,7 +15,7 @@
       "tjmHt": 1200,
       "nbJours": 10,
       "tva": 20,
-      "state": "CANCELED",
+      "state": "OPTION",
       "typePresta": "formation",
       "client": "Modis",
       "comment": "Formation annulée"
@@ -45,7 +45,7 @@
       "tjmHt": 1300,
       "nbJours": 5,
       "tva": 20,
-      "state": "CANCELED",
+      "state": "OPTION",
       "typePresta": "développement",
       "client": "CGI",
       "comment": "Développement d'une nouvelle application"
@@ -61,34 +61,34 @@
       "id": 6
     },
     {
+      "id": 7,
       "tjmHt": 1200,
       "nbJours": 5,
       "tva": 20,
-      "state": "CANCELED",
+      "state": "CONFIRMED",
       "typePresta": "formation",
       "client": "Altran Tech",
-      "comment": "Formation sur les nouvelles technologies",
-      "id": 7
+      "comment": "Formation sur les nouvelles technologies"
     },
     {
       "id": 8,
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "CANCELED",
+      "state": "OPTION",
       "typePresta": "Coaching",
       "client": "Accenture Technologies",
       "comment": "Yes!!!!!"
     },
     {
+      "id": 9,
       "tjmHt": 280,
       "nbJours": 3,
       "tva": 20,
-      "state": "CONFIRMED",
+      "state": "CANCELED",
       "typePresta": "Coaching",
       "client": "Zabibu ETC",
-      "comment": null,
-      "id": 9
+      "comment": null
     }
   ],
   "clients": [
