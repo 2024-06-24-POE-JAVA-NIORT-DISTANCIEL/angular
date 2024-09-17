@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Order } from '../../../core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -19,12 +20,10 @@ export class PageListOrdersComponent {
     'Total TTC',
     'State',
   ];
-  collection!: Order[];
+  collection$!: Observable<Order[]>;
 
   constructor(private ordersService: OrdersService) {
-    this.ordersService.collection.subscribe((orders) => {
-      this.collection = orders;
-    });
+    this.collection$ = this.ordersService.collection;
   }
 
   ngOnInit() {
