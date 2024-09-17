@@ -40,7 +40,8 @@ export class PageListOrdersComponent {
   changeStatus(item: Order, $event: any) {
     const status = $event.target.value;
     this.ordersService.changeStatus(item, status).subscribe((data) => {
-      item = data;
+      Object.assign(item, data);
+      // item.state=data.state
     });
   }
 }

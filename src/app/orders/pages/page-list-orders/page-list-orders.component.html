@@ -10,8 +10,14 @@
       <td>{{ item.tjmHt | currency }}</td>
       <td>{{ item | total | currency }}</td>
       <td>{{ item | total : true | currency }}</td>
-      <td>
-        <select (change)="changeStatus(item,$event)">
+      <td
+        [ngClass]="{
+          'state-canceled': item.state === 'CANCELED',
+          'state-option': item.state === 'OPTION',
+          'state-confirmed': item.state === 'CONFIRMED'
+        }"
+      >
+        <select (change)="changeStatus(item, $event)">
           <!-- ['OPTION','CANCELED','CONFIRMED'] -->
           <!-- OPTION -->
           <option

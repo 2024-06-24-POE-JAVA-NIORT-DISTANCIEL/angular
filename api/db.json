@@ -5,30 +5,30 @@
       "tjmHt": 1200,
       "nbJours": 20,
       "tva": 20,
-      "state": "CANCELED",
+      "state": "CONFIRMED",
       "typePresta": "formation",
       "client": "Capgemini",
       "comment": "Merci Cap pour les 24k"
     },
     {
+      "id": 2,
       "tjmHt": 1200,
       "nbJours": 10,
       "tva": 20,
       "state": "CANCELED",
       "typePresta": "formation",
       "client": "Modis",
-      "comment": "Formation annulée",
-      "id": 2
+      "comment": "Formation annulée"
     },
     {
+      "id": 3,
       "tjmHt": 900,
       "nbJours": 15,
       "tva": 20,
-      "state": "CONFIRMED",
+      "state": "CANCELED",
       "typePresta": "audit",
       "client": "Sopra Steria",
-      "comment": "Audit des systèmes",
-      "id": 3
+      "comment": "Audit des systèmes"
     },
     {
       "tjmHt": 1500,
