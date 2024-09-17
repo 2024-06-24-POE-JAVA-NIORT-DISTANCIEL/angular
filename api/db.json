@@ -1,14 +1,14 @@
 {
   "orders": [
     {
+      "id": 1,
       "tjmHt": 1200,
       "nbJours": 20,
       "tva": 20,
-      "state": "OPTION",
+      "state": "CANCELED",
       "typePresta": "formation",
       "client": "Capgemini",
-      "comment": "Merci Cap pour les 24k",
-      "id": 1
+      "comment": "Merci Cap pour les 24k"
     },
     {
       "tjmHt": 1200,
@@ -41,14 +41,14 @@
       "id": 4
     },
     {
+      "id": 5,
       "tjmHt": 1300,
       "nbJours": 5,
       "tva": 20,
-      "state": "OPTION",
+      "state": "CANCELED",
       "typePresta": "développement",
       "client": "CGI",
-      "comment": "Développement d'une nouvelle application",
-      "id": 5
+      "comment": "Développement d'une nouvelle application"
     },
     {
       "tjmHt": 1100,
@@ -71,14 +71,14 @@
       "id": 7
     },
     {
+      "id": 8,
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "OPTION",
+      "state": "CANCELED",
       "typePresta": "Coaching",
       "client": "Accenture Technologies",
-      "comment": "Yes!!!!!",
-      "id": 8
+      "comment": "Yes!!!!!"
     },
     {
       "tjmHt": 280,

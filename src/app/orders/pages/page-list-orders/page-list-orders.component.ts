@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { StatusOrder } from '../../../core/enums/status-order.enum';
 import { Order } from '../../../core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -21,6 +22,7 @@ export class PageListOrdersComponent {
     'State',
   ];
   collection$!: Observable<Order[]>;
+  status = Object.values(StatusOrder);
 
   constructor(private ordersService: OrdersService) {
     this.collection$ = this.ordersService.collection;
@@ -35,13 +37,10 @@ export class PageListOrdersComponent {
     // alert('Si vous quittez cette, vous allez perdre tous vos changements....');
   }
 
-  total(val: number, coef: number, tva?: number): number {
-    this.counter++;
-    if (tva) {
-      console.log(this.counter, ': total avec TVA');
-      return val * coef * (1 + tva / 100);
-    }
-    console.log(this.counter, ' : total sans TVA');
-    return val * coef;
+  changeStatus(item: Order, $event: any) {
+    const status = $event.target.value;
+    this.ordersService.changeStatus(item, status).subscribe((data) => {
+      item = data;
+    });
   }
 }
