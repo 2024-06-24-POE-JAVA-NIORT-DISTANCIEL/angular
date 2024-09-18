@@ -89,6 +89,16 @@
       "typePresta": "Coaching",
       "client": "Zabibu ETC",
       "comment": null
+    },
+    {
+      "id": 10,
+      "tjmHt": 1200,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "CONFIRMED",
+      "typePresta": "Formation",
+      "client": "Zabidi",
+      "comment": null
     }
   ],
   "clients": [

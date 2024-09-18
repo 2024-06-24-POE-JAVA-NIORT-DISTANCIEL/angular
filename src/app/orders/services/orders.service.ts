@@ -37,5 +37,7 @@ export class OrdersService {
     return this.http.put<Order>(`${this.urlApi}/orders/${item.id}`, item);
   }
 
-  
+  add(item: Order) {
+    return this.http.post(`${this.urlApi}/orders`, item);
+  }
 }
