@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StatusOrder } from '../../../core/enums/status-order.enum';
 import { Order } from '../../../core/models/order';
@@ -23,25 +23,16 @@ export class PageListOrdersComponent {
   ];
   collection$!: Observable<Order[]>;
   status = Object.values(StatusOrder);
-
-  constructor(private ordersService: OrdersService) {
-    this.collection$ = this.ordersService.collection;
-  }
+  private ordersService: OrdersService = Inject(OrdersService);
 
   ngOnInit() {
-    console.log('Voici ngOnInit...');
-  }
-
-  ngOnDestroy() {
-    console.log('Bye bye');
-    // alert('Si vous quittez cette, vous allez perdre tous vos changements....');
+    this.collection$ = this.ordersService.collection;
   }
 
   changeStatus(item: Order, $event: any) {
     const status = $event.target.value;
     this.ordersService.changeStatus(item, status).subscribe((data) => {
       Object.assign(item, data);
-      // item.state=data.state
     });
   }
 }

@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StatusOrder } from '../../../core/enums/status-order.enum';
 import { Order } from '../../../core/models/order';
 
@@ -13,13 +13,7 @@ export class FormOrderComponent {
   @Input() init!: Order;
   @Output() submitted = new EventEmitter<Order>();
   form!: FormGroup;
-
-  // form2 = new FormGroup({
-  //   tjmHt: new FormControl(this.init.tjmHt),
-  //   nbJours: new FormControl(this.init.nbJours),
-  // });
-
-  constructor(private fb: FormBuilder) {}
+  private fb: FormBuilder = Inject(FormBuilder);
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -27,9 +21,16 @@ export class FormOrderComponent {
       nbJours: [this.init.nbJours],
       tva: [this.init.tva],
       state: [this.init.state],
-      client: [this.init.client],
+      client: [
+        this.init.client,
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(20),
+        ],
+      ],
       comment: [this.init.comment],
-      typePresta: [this.init.typePresta],
+      typePresta: [this.init.typePresta, Validators.required],
       id: [this.init.id],
     });
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Order } from '../../../core/models/order';
 import { OrdersService } from '../../services/orders.service';
@@ -10,8 +10,8 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageAddOrderComponent {
   item = new Order();
-
-  constructor(private ordersService: OrdersService, private router: Router) {}
+  private ordersService: OrdersService = Inject(OrdersService);
+  private router: Router = Inject(Router);
 
   handleSubmit(item: Order) {
     // 1. Créer un order dans la BDD
